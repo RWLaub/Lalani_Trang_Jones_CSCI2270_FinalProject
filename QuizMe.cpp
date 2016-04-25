@@ -203,7 +203,7 @@ void QuizMe::quiz() {
     }
 
     cout << "You got " << right << " right and " << wrong << " wrong." << endl;
-    cout << "Overal score: " << (right/(right+wrong))*100 << "%" << endl;
+    cout << "Overall score: " << (right/(right+wrong))*100 << "%" << endl;
     }
 }
 
