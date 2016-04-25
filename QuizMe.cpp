@@ -31,8 +31,17 @@ void QuizMe::buildSample() {
 void QuizMe::addCard(string key, string definition) {
 
     current = head;
+    FlashCard *card = new FlashCard;
 
-    if(current != NULL) {
+    if(head == NULL){
+        card -> key = key;
+        card -> definition = definition;
+        card -> next = NULL;
+        card -> previous = NULL;
+        head = card;
+        return;
+    }
+    else {
 
         while(current -> next != NULL) {
 
@@ -42,7 +51,7 @@ void QuizMe::addCard(string key, string definition) {
 
     }
 
-    FlashCard *card = new FlashCard;
+
     card -> key = key;
     card -> definition = definition;
     card -> next = NULL;
@@ -139,6 +148,8 @@ void QuizMe::deleteAll() {
 		delete temp;
 
 	}
+	head = NULL;
+	current = NULL;
 
     ofstream ofs;
     ofs.open("quizcards.txt", ofstream::out | ofstream::trunc);
@@ -154,12 +165,12 @@ void QuizMe::quiz() {
 
     while(current != NULL) {
 
-        string answer = "";
+        string answer;
         cout << current -> key << endl;
         cin.ignore();
         getline(cin, answer);
 
-        if(answer != current -> definition) {
+        if(current->definition.compare(answer) != 0) {
 
             cout << "WRONG ANSWER!" << endl;
             wrong++;
