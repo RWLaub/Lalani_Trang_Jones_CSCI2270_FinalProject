@@ -63,12 +63,17 @@ void QuizMe::addCard(string key, string definition) {
 void QuizMe::printAll() {
 
     current = head;
+    if (head == NULL){
+        cout << "You have no cards!" << endl;
+        return;
+    }
+    else{
+        while(current != NULL) {
 
-    while(current != NULL) {
+            cout << current -> key << " " << current -> definition << endl;
+            current = current -> next;
 
-        cout << current -> key << " " << current -> definition << endl;
-        current = current -> next;
-
+        }
     }
 
 }
