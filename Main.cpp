@@ -38,10 +38,10 @@ int main(int argc, char* argv[]) {
 
         if(option == 1) {
 
-            cout << "Front of card: " << endl;
+            cout << "Front of card:" << endl;
             cin.ignore();
             getline(cin, front);
-            cout << "Back of card: " << endl;
+            cout << "Back of card:" << endl;
             getline(cin, back);
             test.addCard(front, back);
 
@@ -58,12 +58,18 @@ int main(int argc, char* argv[]) {
 
         } else if(option == 5) {
 
+            cout << "Front of card:" << endl;
+            cin.ignore();
+            getline(cin, front);
+            test.deleteCard(front);
 
         } else if(option == 6) {
 
+            test.deleteAll();
 
         } else if(option == 7) {
 
+            test.quiz();
 
         } else if(option == 8) {
 

@@ -1,4 +1,1 @@
-What is love?,Baby don't hurt me
-What is the color of the sky?,Blue
-Who is the president?,Donald Trump
-Why do we fall?,So we can learn to get back up!
+What color is the sky?,Blue
