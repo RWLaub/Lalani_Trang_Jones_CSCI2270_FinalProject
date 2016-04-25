@@ -171,10 +171,13 @@ void QuizMe::deleteAll() {
 }
 
 void QuizMe::quiz() {
-
+    if(head == NULL){
+        cout << "You have no cards!" << endl;
+    }
+    else{
     current = head;
-    int right = 0;
-    int wrong = 0;
+    double right = 0;
+    double wrong = 0;
 
     while(current != NULL) {
 
@@ -200,7 +203,8 @@ void QuizMe::quiz() {
     }
 
     cout << "You got " << right << " right and " << wrong << " wrong." << endl;
-
+    cout << "Overal score: " << (right/(right+wrong))*100 << "%" << endl;
+    }
 }
 
 void QuizMe::findCard(string key) {
