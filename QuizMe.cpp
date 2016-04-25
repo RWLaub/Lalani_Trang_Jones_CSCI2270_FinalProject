@@ -81,6 +81,7 @@ void QuizMe::uploadCards() {
     }
 
     file.close();
+    cout << "Successfully uploaded to file." << endl;
 
 }
 
@@ -176,4 +177,49 @@ void QuizMe::quiz() {
 
     cout << "You got " << right << " right and " << wrong << " wrong." << endl;
 
+}
+
+void QuizMe::findCard(string key) {
+    FlashCard *ptr = head;
+    bool found = false;
+    while (ptr != NULL){
+        if (ptr->key==key){
+            cout << "Back of card: " << endl;
+            cout << ptr->definition << endl;
+            found = true;
+        }
+        ptr = ptr->next;
+    }
+    if (!found){
+        cout << "Card not found" << endl;
+    }
+}
+
+void QuizMe::editCard(string key,string newkey, string newdef){
+
+    FlashCard *ptr = head;
+    bool found = false;
+    while (ptr != NULL){
+        if (ptr->key==key){
+            ptr->key = newkey;
+            ptr->definition = newdef;
+            found = true;
+            cout << "Successfully changed card." << endl;
+        }
+        ptr = ptr->next;
+    }
+    if (!found){
+        cout << "Card not found" << endl;
+    }
+
+}
+
+void QuizMe::total(){
+    int counter = 0;
+    FlashCard *ptr = head;
+    while (ptr != NULL){
+        counter++;
+        ptr=ptr->next;
+    }
+    cout << "Total number of cards: " << counter << endl;
 }

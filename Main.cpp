@@ -31,8 +31,10 @@ int main(int argc, char* argv[]) {
     int option = 0;
     string front;
     string back;
+    string newkey;
+    string newdef;
 
-    while(option != 8) {
+    while(option != 10) {
 
         option = displayMenu();
 
@@ -51,27 +53,49 @@ int main(int argc, char* argv[]) {
 
         } else if(option == 3) {
 
+            cout << "Front of card:" << endl;
+            cin.ignore();
+            getline(cin, front);
+
+            test.findCard(front);
 
         } else if(option == 4) {
 
-            test.printAll();
+            cout << "Front of card to edit:" << endl;
+            cin.ignore();
+            getline(cin, front);
+            cout << "Change front to:" << endl;
+            //cin.ignore();
+            getline(cin, newkey);
+            cout << "Change back to:" << endl;
+            //cin.ignore();
+            getline(cin, newdef);
+            test.editCard(front, newkey, newdef);
 
         } else if(option == 5) {
+
+            test.printAll();
+
+        } else if(option == 6) {
 
             cout << "Front of card:" << endl;
             cin.ignore();
             getline(cin, front);
             test.deleteCard(front);
 
-        } else if(option == 6) {
+        } else if(option == 7) {
 
             test.deleteAll();
 
-        } else if(option == 7) {
+        } else if(option == 8) {
+
+            test.total();
+
+        } else if(option == 9) {
 
             test.quiz();
 
-        } else if(option == 8) {
+        } else if(option == 10) {
 
             cout << "Goodbye!" << endl;
 
@@ -91,11 +115,13 @@ int displayMenu() {
     cout << "1. Add card" << endl;
     cout << "2. Upload cards" << endl;
     cout << "3. Find card" << endl;
-    cout << "4. Print all cards" << endl;
-    cout << "5. Delete card" << endl;
-    cout << "6. Delete all cards" << endl;
-    cout << "7. Quiz Me!" << endl;
-    cout << "8. Quit" << endl;
+    cout << "4. Edit card" << endl;
+    cout << "5. Print all cards" << endl;
+    cout << "6. Delete card" << endl;
+    cout << "7. Delete all cards" << endl;
+    cout << "8. Count cards" << endl;
+    cout << "9. Quiz Me!" << endl;
+    cout << "10. Quit" << endl;
 
     int option;
     cin >> option;
