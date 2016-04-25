@@ -30,9 +30,11 @@ int main(int argc, char* argv[]) {
 
     int option = 0;
     string front;
+    string newfront;
     string back;
+    string newback;
 
-    while(option != 8) {
+    while(option != 10) {
 
         option = displayMenu();
 
@@ -50,7 +52,10 @@ int main(int argc, char* argv[]) {
             test.uploadCards();
 
         } else if(option == 3) {
-
+            cout << "Front of card: " << endl;
+            cin.ignore();
+            getline(cin, front);
+            test.findCard(front);
 
         } else if(option == 4) {
 
@@ -63,12 +68,23 @@ int main(int argc, char* argv[]) {
 
 
         } else if(option == 7) {
+            cout << "Front of card: " << endl;
+            getline(cin, front);
+            cout << "New front of card: " << endl;
+            getline(cin, newfront);
+            cout << "New back of card: " << endl;
+            getline(cin, newback);
 
+            test.editCard(front,newfront,newback);
 
         } else if(option == 8) {
+            test.total();
 
+        } else if(option == 9) {
+
+
+        } else if(option == 10) {
             cout << "Goodbye!" << endl;
-
         }
 
     }
@@ -88,8 +104,10 @@ int displayMenu() {
     cout << "4. Print all cards" << endl;
     cout << "5. Delete card" << endl;
     cout << "6. Delete all cards" << endl;
-    cout << "7. Quiz Me!" << endl;
-    cout << "8. Quit" << endl;
+    cout << "7. Edit card" << endl;
+    cout << "8. Count number of cards" << endl;
+    cout << "9. Quiz Me!" << endl;
+    cout << "10. Quit" << endl;
 
     int option;
     cin >> option;
