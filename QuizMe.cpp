@@ -79,7 +79,11 @@ void QuizMe::printAll() {
 }
 
 void QuizMe::uploadCards() {
-
+    if(head == NULL){
+        cout << "There are no cards to upload!" << endl;
+        return;
+    }
+    else{
     current = head -> next;
 
     ofstream file;
@@ -96,6 +100,7 @@ void QuizMe::uploadCards() {
 
     file.close();
     cout << "Successfully uploaded to file." << endl;
+    }
 
 }
 
