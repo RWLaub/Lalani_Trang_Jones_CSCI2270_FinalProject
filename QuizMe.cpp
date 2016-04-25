@@ -117,7 +117,14 @@ void QuizMe::deleteCard(string key) {
 	}
 
 	if (found) {
-		// if the deleted node is a head
+		if(head -> next == NULL){
+            del = head;
+            head -> next = NULL;
+            head -> previous = NULL;
+            head = NULL;
+            delete del;
+		}
+		else{
 		if (search == head) {
 			del = head;
 			head = head->next;
@@ -134,6 +141,7 @@ void QuizMe::deleteCard(string key) {
 			search->previous->next = search->next;
 			search->next->previous = search->previous;
 			delete search;
+		}
 		}
 	}
 	else {
