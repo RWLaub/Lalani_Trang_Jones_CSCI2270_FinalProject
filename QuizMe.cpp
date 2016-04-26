@@ -183,12 +183,12 @@ void QuizMe::quiz() {
     current = head;
     double right = 0;
     double wrong = 0;
+    cin.ignore();
 
     while(current != NULL) {
 
         string answer;
         cout << current -> key << endl;
-        cin.ignore();
         getline(cin, answer);
 
         if(current->definition.compare(answer) != 0) {
