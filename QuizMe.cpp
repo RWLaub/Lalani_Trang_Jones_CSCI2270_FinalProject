@@ -40,8 +40,7 @@ void QuizMe::addCard(string key, string definition) {
         card -> previous = NULL;
         head = card;
         return;
-    }
-    else {
+    } else {
 
         while(current -> next != NULL) {
 

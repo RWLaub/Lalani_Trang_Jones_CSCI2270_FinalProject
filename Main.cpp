@@ -24,11 +24,13 @@ QuizMe test;
 
 int main(int argc, char* argv[]) {
 
-    test.buildSample();
+    test.buildSample(); // Creates a sample card for the user
 
-    readFile(argv[1]);
+    readFile(argv[1]); // Reads the text file for any saved cards
 
-    int option = 0;
+    int option = 0; // What option the user selects from menu
+
+    // Important variables:
     string front;
     string back;
     string newkey;
@@ -40,6 +42,8 @@ int main(int argc, char* argv[]) {
 
         if(option == 1) {
 
+            // Add a card
+
             cout << "Front of card:" << endl;
             cin.ignore();
             getline(cin, front);
@@ -49,9 +53,13 @@ int main(int argc, char* argv[]) {
 
         } else if(option == 2) {
 
-            test.uploadCards();
+            // Upload new cards
+
+            test.uploadCards(); // Sends to text file
 
         } else if(option == 3) {
+
+            // Find card
 
             cout << "Front of card:" << endl;
             cin.ignore();
@@ -61,22 +69,26 @@ int main(int argc, char* argv[]) {
 
         } else if(option == 4) {
 
+            // Edit card
+
             cout << "Front of card to edit:" << endl;
             cin.ignore();
             getline(cin, front);
             cout << "Change front to:" << endl;
-            //cin.ignore();
             getline(cin, newkey);
             cout << "Change back to:" << endl;
-            //cin.ignore();
             getline(cin, newdef);
             test.editCard(front, newkey, newdef);
 
         } else if(option == 5) {
 
+            // Print all cards
+
             test.printAll();
 
         } else if(option == 6) {
+
+            // Delete a card
 
             cout << "Front of card:" << endl;
             cin.ignore();
@@ -85,17 +97,25 @@ int main(int argc, char* argv[]) {
 
         } else if(option == 7) {
 
-            test.deleteAll();
+            // Delete all cards
+
+            test.deleteAll(); // Deletes from text file as well
 
         } else if(option == 8) {
+
+            // Get the total number of cards
 
             test.total();
 
         } else if(option == 9) {
 
+            // Quiz yourself!
+
             test.quiz();
 
         } else if(option == 10) {
+
+            // Quit
 
             cout << "Goodbye!" << endl;
 
@@ -106,7 +126,7 @@ int main(int argc, char* argv[]) {
 }
 
 /******************************
-          HELPERS
+          MENU
 ******************************/
 
 int displayMenu() {
@@ -155,6 +175,8 @@ void readFile(string file) {
             wordCount = 0;
 
 			while(getline(ss, word, ',')) {
+
+                // First word is front, second is back
 
                 wordCount++;
 
