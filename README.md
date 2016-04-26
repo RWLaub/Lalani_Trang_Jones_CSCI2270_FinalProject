@@ -18,6 +18,11 @@ g++ -std=c++11 Main.cpp QuizMe.cpp
 ./a.exe quizcards.txt
 ```
 
+## Dependencies
+
+## System Requirements
+This program works for Windows, OSX, and Linux.
+
 ## Group	Members
 Faisal Lalani <br />
 Phi Trang <br />
