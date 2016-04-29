@@ -20,24 +20,16 @@ void QuizMe::buildSample() {
     string sampleKey = "What is the meaning of life?";
     string sampleDefinition = "42";
 
-    FlashCard *card = new FlashCard;
-    card -> key = sampleKey;
-    card -> definition = sampleDefinition;
-    card -> next = NULL;
+    FlashCard *card = new FlashCard(sampleKey, sampleDefinition);
     head = card;
 
 }
 
 void QuizMe::addCard(string key, string definition) {
-
     current = head;
-    FlashCard *card = new FlashCard;
+    FlashCard *card = new FlashCard(key, definition);
 
     if(head == NULL){
-        card -> key = key;
-        card -> definition = definition;
-        card -> next = NULL;
-        card -> previous = NULL;
         head = card;
         return;
     } else {
@@ -49,14 +41,8 @@ void QuizMe::addCard(string key, string definition) {
         }
 
     }
-
-
-    card -> key = key;
-    card -> definition = definition;
-    card -> next = NULL;
     current -> next = card;
     card -> previous = current;
-
 }
 
 void QuizMe::printAll() {
@@ -85,8 +71,7 @@ void QuizMe::uploadCards() {
     else{
     current = head -> next;
 
-    ofstream file;
-    file.open ("quizcards.txt");
+    ofstream file("quizcards.txt");
 
     while(current != NULL) {
 
@@ -106,8 +91,8 @@ void QuizMe::uploadCards() {
 void QuizMe::deleteCard(string key) {
 
 	bool found = false;
-	FlashCard *del = new FlashCard;
-	FlashCard *search = new FlashCard;
+	FlashCard *del;
+	FlashCard *search;
 	search = head;
 
 	// find the flashCard to delete
@@ -155,7 +140,7 @@ void QuizMe::deleteCard(string key) {
 
 void QuizMe::deleteAll() {
 
-	FlashCard *temp = new FlashCard;
+	FlashCard *temp;
 
 	while(head != NULL) {
 
