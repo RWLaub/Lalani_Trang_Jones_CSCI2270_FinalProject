@@ -3,6 +3,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <limits>
 using namespace std;
 
 /******************************
@@ -45,10 +46,11 @@ int main(int argc, char* argv[]) {
             // Add a card
 
             cout << "Front of card:" << endl;
-            cin.ignore();
+            //cin.ignore(); Ignoring the first char
             getline(cin, front);
             cout << "Back of card:" << endl;
             getline(cin, back);
+            cout << front << " " << back << endl;
             test.addCard(front, back);
 
         } else if(option == 2) {
@@ -145,6 +147,8 @@ int displayMenu() {
 
     int option;
     cin >> option;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     return option;
 }

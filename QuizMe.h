@@ -9,7 +9,13 @@ struct FlashCard {
     std::string definition;
     FlashCard *next;
     FlashCard *previous;
-
+    FlashCard() {}
+    FlashCard(std::string k, std::string def) {
+        key = k;
+        definition = def;
+        next = NULL;
+        previous = NULL;
+    }
 };
 
 class QuizMe {

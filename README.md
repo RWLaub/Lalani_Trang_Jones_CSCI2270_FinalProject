@@ -29,5 +29,14 @@ Phi Trang <br />
 Adam Jones <br />
 
 ## Contributors
+Ryan Hartsfield
+
+##Changes
+-Fixed cin.ignore() bug
+-Fixed non-standard input -> infinite loop
+-Added constructors to FlashCard struct
+-Modified code to reflect above change
+-Removed some possible memory leaks in delete methods
 
 ## Open	Issues/Bugs
+-Error message for people not adding a text file at command line
