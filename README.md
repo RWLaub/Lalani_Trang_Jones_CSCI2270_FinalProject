@@ -32,11 +32,11 @@ Adam Jones <br />
 Ryan Hartsfield
 
 ##Changes
--Fixed cin.ignore() bug
--Fixed non-standard input -> infinite loop
--Added constructors to FlashCard struct
--Modified code to reflect above change
--Removed some possible memory leaks in delete methods
+1. Fixed cin.ignore() bug
+2. Fixed non-standard input -> infinite loop
+3. Added constructors to FlashCard struct
+4. Modified code to reflect above change
+5. Removed some possible memory leaks in delete methods
 
 ## Open	Issues/Bugs
--Error message for people not adding a text file at command line
+1. Error message for people not adding a text file at command line
