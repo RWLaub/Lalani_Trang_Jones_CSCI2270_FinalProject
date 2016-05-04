@@ -57,7 +57,11 @@ int main(int argc, char* argv[]) {
 
             // Upload new cards
 
-            test.uploadCards(); // Sends to text file
+	    if(test.isEmpty()) {
+	    	cout << "Nothing to upload" << endl;
+	    } else {
+                test.uploadCards(); // Sends to text file
+	    }
 
         } else if(option == 3) {
 

@@ -240,3 +240,7 @@ void QuizMe::total(){
     }
     cout << "Total number of cards: " << counter << endl;
 }
+
+bool QuizMe::isEmpty(){
+    return head == NULL;
+}

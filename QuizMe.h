@@ -33,6 +33,7 @@ class QuizMe {
         void uploadCards();
         void quiz();
         void total();
+        bool isEmpty();
 
     protected:
 
